@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Abi's Magic Eight Ball</title>
+    <link type="text/css" href=".\style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Orbitron" rel="stylesheet">
+    <script>let eightBall = function(){
+      if(document.getElementById('query').value ===''){
+      document.getElementById("test").innerHTML= 'Please enter a question!';
+      document.getElementById("plswork").innerHTML = '8';
+      document.getElementById("plswork").style.fontSize = '80px';
+      document.getElementById("plswork").style.top = '210px';
+
+    }else{
+        document.getElementById("plswork").innerHTML = 'Your answer is:';
+        document.getElementById("plswork").style.fontSize = '10px';
+        document.getElementById("plswork").style.top = '250px';
+
+
+
+        switch(Math.floor(Math.random()*11)+0){
+
+        case 1:
+        document.getElementById("test").innerHTML='Maybe'
+        break;
+
+        case 2:
+        document.getElementById("test").innerHTML='Definitely'
+        break;
+
+        case 3:
+        document.getElementById("test").innerHTML='Check again later'
+        break;
+
+        case 4:
+        document.getElementById("test").innerHTML='Definitely not'
+        break;
+
+        case 5:
+        document.getElementById("test").innerHTML='Obviously'
+        break;
+
+        case 6:
+        document.getElementById("test").innerHTML='No'
+        break;
+
+        case 7:
+        document.getElementById("test").innerHTML='Yes'
+        break;
+
+        case 8:
+        document.getElementById("test").innerHTML='Mayhaps'
+        break;
+
+        case 9:
+        document.getElementById("test").innerHTML= 'No idea on that one'
+        break;
+
+        case 10:
+        document.getElementById("test").innerHTML= 'The gods will it.'
+        break;
+
+        default:
+          document.getElementById("test").innerHTML= 'I could ask you the same...';
+
+
+
+          }
+
+  };
+
+}
+let input = document.getElementById('oof');
+let boom = function(event){
+  if(event.keyCode === 13){
+    eightBall();
+  }
+}
+  input.addEventListener("keypress",boom)
+  </script>
+</head>
+  <body>
+    <div class = 'title'><h1> Abi's MAGIC 8-Ball</h1>
+    <image class="ball" src=".\Ball.png"><h1 id="plswork" class="eight">8</h1></image>
+    </div>
+    <br>
+    <div class='answer'><p id="test"></p></div>
+  <div class = 'ask'><input type="text" id='query' placeholder ="What is your question?" class='user'>
+    <input onkeypress="boom"  id="oof" type="submit" value="Ask Away" onclick= "eightBall(); document.getElementById('query').value = ''">
+  </div>
+  </body>
+</html>
